@@ -1,6 +1,8 @@
 # plexmon
 Monitor on a Raspberry PI LCD screen what Plex is playing on an Amazon Echo device
 
+![Screenshot](screenshot.png)
+
 This is the display I'm using:
  * https://www.amazon.com/gp/product/B07JZHLWGM
  * https://github.com/iUniker/3.6NewDriver.git
