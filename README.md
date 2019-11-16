@@ -1,5 +1,5 @@
 # plexmon
-Monitor what plex is playing on an Amazon Echo device
+Monitor on a Raspberry PI LCD screen what Plex is playing on an Amazon Echo device
 
 This is the display I'm using:
  * https://www.amazon.com/gp/product/B07JZHLWGM
@@ -10,8 +10,8 @@ Install the pygame package and pip
  * sudo apt-get install python-pip
 
 And the plex API
- * pip install plexapi
- 
+ * sudo pip install plexapi
+
 ## WebSocket issue
 
 A problem with this version of websocket
