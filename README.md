@@ -12,6 +12,13 @@ Install the pygame package and pip
 And the plex API
  * sudo pip install plexapi
 
+Before the script can be used it must have a token.  Edit this line in the code
+```
+token = '<your token>'
+```
+Use this article to find your token
+ * https://support.plex.tv/articles/204059436-finding-an-authentication-token-x-plex-token/
+
 ## WebSocket issue
 
 A problem with this version of websocket
