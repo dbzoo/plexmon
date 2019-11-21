@@ -3,6 +3,9 @@ Monitor on a Raspberry PI LCD screen what Plex is playing on an Amazon Echo devi
 
 ![Screenshot](screenshot.png)
 
+Raspberry PI with screen
+ * https://photos.app.goo.gl/Q23Nja5fsSCRhAc46
+
 This is the display I'm using:
  * https://www.amazon.com/gp/product/B07JZHLWGM
  * https://github.com/iUniker/3.6NewDriver.git
