@@ -9,6 +9,7 @@ os.environ['PYGAME_HIDE_SUPPORT_PROMPT'] = "hide"
 import pygame
 import requests
 import signal
+import socket
 
 os.environ["SDL_FBDEV"] = "/dev/fb0"
 
@@ -21,6 +22,12 @@ white = pygame.Color(255,255,255)
 yellow = pygame.Color(255,255,0)
 grey = pygame.Color(192,192,192)
 plex = PlexServer(baseurl,token,requests.Session())
+
+def getNetworkIp():
+    s = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
+    s.setsockopt(socket.SOL_SOCKET, socket.SO_BROADCAST, 1)
+    s.connect(('<broadcast>', 0))
+    return s.getsockname()[0]
 
 def human_time(n):
     n = n // 1000
@@ -159,6 +166,7 @@ class Monitor(object):
         self.spheres = (
             ScrollText(self.surface, "Plex Song Monitor", 0, 0),
             ScrollText(self.surface, "Nothing is currently being played", 0, 100, white, 40),
+            ScrollText(self.surface, getNetworkIp(), 0, 420, white, 40),
         )        
         self.currentSession = 0
 
@@ -206,6 +214,8 @@ class Monitor(object):
             self.surface.fill((0, 0, 0, 255))
             for thing in self.spheres:
                 thing.update()
+            # flip screen (power plug on top)
+            #self.surface.blit(pygame.transform.rotate(self.surface,180),(0,0))
             pygame.display.flip()
 
 def handler(signum, frame):
